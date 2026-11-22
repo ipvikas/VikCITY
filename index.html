@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Know the Weather</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Know the Weather</h1>
+    <p class="tagline">What should I wear today?</p>
+
+    <!-- F1: Search box. Press Enter or click the button. -->
+    <form id="search-form" class="search">
+      <label for="city-input" class="visually-hidden">City name</label>
+      <input id="city-input" type="text" placeholder="Type a city, e.g. London" autocomplete="off">
+      <button id="search-button" type="submit">Search</button>
+    </form>
+
+    <!-- F5: Friendly messages appear here when something goes wrong. -->
+    <p id="message" class="message" role="alert" hidden></p>
+
+    <!-- Weather results (hidden until a city is found) -->
+    <section id="result" class="result" hidden>
+      <h2 id="city-name"></h2>
+
+      <!-- F3: Emoji and short description -->
+      <div class="sky">
+        <span id="weather-emoji" class="emoji" aria-hidden="true"></span>
+        <span id="weather-description"></span>
+      </div>
+
+      <!-- F2: Temperature and feels like -->
+      <p id="temperature" class="temperature"></p>
+      <p id="feels-like" class="feels-like"></p>
+
+      <!-- F4: Outfit advice -->
+      <div class="outfit">
+        <h3 id="outfit-title">What to wear</h3>
+        <ul id="outfit-list"></ul>
+      </div>
+
+      <!-- Version 4: local time, currency and places to visit -->
+      <p class="info"><strong>Local time:</strong> <span id="local-time"></span></p>
+      <p class="info"><strong>Currency:</strong> <span id="currency">Loading...</span></p>
+      <div class="places">
+        <h3>Places to visit</h3>
+        <ul id="places-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

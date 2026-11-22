@@ -1,0 +1,175 @@
+/* ---------- Basic page setup ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  color: #1d2b3a;
+  /* A simple sky-colored background (it will change with the weather in Version 2) */
+  background: linear-gradient(180deg, #bfe3f7 0%, #eaf6fc 100%);
+}
+
+/* ---------- The main card ---------- */
+.card {
+  width: 100%;
+  max-width: 440px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 0 8px 30px rgba(29, 43, 58, 0.15);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.tagline {
+  margin: 4px 0 20px;
+  color: #51657a;
+}
+
+/* ---------- Search box ---------- */
+.search {
+  display: flex;
+  gap: 8px;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 2px solid #c5d3e0;
+  border-radius: 12px;
+}
+
+.search button {
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: #1f6fb2;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.search button:disabled {
+  background: #8aa9c4;
+  cursor: wait;
+}
+
+/* Clear keyboard focus so it is easy to see where you are */
+.search input:focus,
+.search button:focus {
+  outline: 3px solid #f2a900;
+  outline-offset: 2px;
+}
+
+/* ---------- Friendly messages ---------- */
+.message {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  background: #fff3d6;
+  border-radius: 12px;
+  color: #6b4b00;
+}
+
+/* ---------- Weather result ---------- */
+.result {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.result h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.sky {
+  margin-top: 8px;
+  font-size: 1.1rem;
+}
+
+.emoji {
+  display: block;
+  font-size: 4rem;
+  line-height: 1.2;
+}
+
+.temperature {
+  margin: 8px 0 0;
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.feels-like {
+  margin: 0;
+  color: #51657a;
+}
+
+/* ---------- Outfit advice ---------- */
+.outfit {
+  margin-top: 24px;
+  padding: 16px;
+  text-align: left;
+  background: #eef5fb;
+  border-radius: 14px;
+}
+
+.outfit h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.outfit ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.outfit li {
+  padding: 4px 0;
+  font-size: 1.05rem;
+}
+
+/* ---------- Helpers ---------- */
+/* Hides text from the eyes but keeps it for screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Make sure the "hidden" attribute always wins */
+[hidden] {
+  display: none !important;
+}
+
+/* ---------- Background changes with the sky (JavaScript adds one of these classes to <body>) ---------- */
+body.bg-clear  { background: linear-gradient(180deg, #4aa8f0 0%, #bfe6ff 100%); }
+body.bg-cloudy { background: linear-gradient(180deg, #9aa8b5 0%, #d9e0e6 100%); }
+body.bg-rainy  { background: linear-gradient(180deg, #4b5b6e 0%, #8fa0b3 100%); }
+body.bg-windy  { background: linear-gradient(180deg, #7fd1c7 0%, #e3f6f3 100%); }
+body.bg-dusty  { background: linear-gradient(180deg, #d9a35f 0%, #f3dcb4 100%); }
+body.bg-snowy  { background: linear-gradient(180deg, #cfe3f2 0%, #ffffff 100%); }
+body.bg-foggy  { background: linear-gradient(180deg, #b7bcc2 0%, #e8eaec 100%); }
+
+/* ---------- Version 4 extras ---------- */
+.info { margin: 12px 0 0; }
+.places { margin-top: 20px; text-align: left; }
+.places h3 { margin: 0 0 8px; font-size: 1.1rem; }
+.places ul { margin: 0; padding-left: 0; list-style: none; }
+.places li { padding: 6px 0; border-top: 1px solid #e1e8ef; font-size: 0.95rem; }
+.places li span { display: block; color: #51657a; }
